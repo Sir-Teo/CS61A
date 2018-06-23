@@ -25,3 +25,20 @@ URL: https://okpy.org/cal/cs61a/su18/lab01/submissions/vgWlNn
 Checking for software updates...
 OK is up to date
 ```
+
+# HW01
+```
+=====================================================================
+Assignment: Homework 1
+OK, version v1.13.11
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    4 test cases passed! No cases failed.
+
+Submit... 100% complete
+```
