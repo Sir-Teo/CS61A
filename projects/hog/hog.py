@@ -232,8 +232,35 @@ def announce_highest(who, previous_high=0, previous_score=0):
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
     def say(score0, score1):
-        if
-        return say
+        if who == 0:
+            if score0 - previous_score == 0 and previous_score != 0:
+                return announce_highest(0,previous_high,score0)
+            elif score0 - previous_score > previous_high:
+                print(score0 - previous_score, 'point(s)! That\'s the biggest gain yet for Player 0')
+                return announce_highest(0, score0 - previous_score, score0)
+            elif score0 - previous_score > 0:
+                #print('Player 0 gets', score0 - previous_score, 'point(s); not enough for a new high')
+                return announce_highest(0, previous_high, score0)
+            elif is_swap(score0, score1) and score1 > score0 and score0 - previous_score > 0:
+                print('Player 0 gets ',score0 - previous_score, 'points, then Swine Swap applies ',score1 - score0,'point(s)! That\'s the biggest gain yet for Player 0')
+                return(0, score1 - score0, score1)
+            else:
+                return announce_highest(0, previous_high, score0)
+        if who == 1:
+            if score1 - previous_score == 0 and previous_score != 0:
+                return announce_highest(1,previous_high,score1)
+            elif score1 - previous_score > previous_high:
+                print(score1 - previous_score, 'point(s)! That\'s the biggest gain yet for Player 1')
+                return announce_highest(1, score1 - previous_score, score1)
+            elif score1 - previous_score > 0:
+                #print('Player 1 gets', score1 - previous_score, 'point(s); not enough for a new high')
+                return announce_highest(1, previous_high, score1)
+            elif is_swap(score1, score0) and score0 > score1 and score1 - previous_score > 0:
+                print('Player 1 gets ',score1 - previous_score, 'points, then Swine Swap applies ',score1 - score0,'point(s)! That\'s the biggest gain yet for Player 1')
+                return(1, score0 - score1, score0)
+            else:
+                return announce_highest(1, previous_high, score1)
+    return say
     # END PROBLEM 7
 
 
@@ -273,7 +300,16 @@ def make_averaged(fn, num_samples=1000):
     """
     # BEGIN PROBLEM 8
     "*** YOUR CODE HERE ***"
+    def average_dice(*args):
+        sum = 0
+        for r in range(0, num_samples):
+            sum += fn(*args)
+        result = sum/num_samples
+        return result
+    return average_dice
     # END PROBLEM 8
+
+
 
 
 def max_scoring_num_rolls(dice=six_sided, num_samples=1000):
@@ -287,6 +323,17 @@ def max_scoring_num_rolls(dice=six_sided, num_samples=1000):
     """
     # BEGIN PROBLEM 9
     "*** YOUR CODE HERE ***"
+    max = 0
+    result = 0
+    max_num_roll = 0
+    for i in range(1,11):
+        for r in range(1, num_samples):
+            result += roll_dice(i,dice)
+        result /= num_samples
+        if result > max:
+            max_num_roll = i
+            max = result
+    return max_num_roll
     # END PROBLEM 9
 
 
