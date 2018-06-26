@@ -1,7 +1,7 @@
 # CS61A
-Summer 2018, CS61A, Structure and Interpretation of Computer Programs!
+Summer 2018, CS61A, Structure and Interpretation of Computer Programs!This will remain a private repository until the summer ends. Although CS61A uses the same project every year, they might change some functions each term to prevent cheating.
 
-# Lab 01
+## Lab 01
 ```
 Last login: Wed Jun 20 22:55:24 on ttys000
 TeodeMacBook-Pro:~ teo$ cd Desktop/lab01
@@ -19,14 +19,9 @@ Test summary
     9 test cases passed! No cases failed.
 
 Submit... 100% complete
-Submission successful for user: zengweicheng@berkeley.edu
-URL: https://okpy.org/cal/cs61a/su18/lab01/submissions/vgWlNn
-
-Checking for software updates...
-OK is up to date
 ```
 
-# HW01
+## HW01
 ```
 =====================================================================
 Assignment: Homework 1
@@ -43,7 +38,7 @@ Test summary
 Submit... 100% complete
 ```
 
-# Project 1 Hog
+## Project 1 Hog
 ```
 =====================================================================
 Assignment: Project 1: Hog
