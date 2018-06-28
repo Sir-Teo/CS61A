@@ -1,6 +1,8 @@
 # CS61A
-Summer 2018, CS61A, Structure and Interpretation of Computer Programs!This will remain a private repository until the summer ends. Although CS61A uses the same project every year, they might change some functions each term to prevent cheating.
+Summer 2018, CS61A, Structure and Interpretation of Computer Programs! This will remain a private repository until the summer ends. Although CS61A uses the same project every year, they might change some functions each term to prevent cheating.
 
+
+# OK Submissions
 ## Lab 01
 ```
 Last login: Wed Jun 20 22:55:24 on ttys000
@@ -84,5 +86,3 @@ Running tests
 Test summary
     3 test cases passed! No cases failed.
 ```
-
-## lab03
