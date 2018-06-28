@@ -1,0 +1,25 @@
+{
+    "name": "Lab 3",
+    "endpoint": "cal/cs61a/su18/lab03",
+    "src": [
+        "lab03.py",
+        "lab03_extra.py"
+    ],
+    "tests": {
+        "lab03.py": "doctest",
+        "lab03_extra.py": "doctest"
+    },
+    "default_tests": [
+		    "skip_add",
+        "hailstone",
+		    "if_this_not_that"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}
