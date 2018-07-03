@@ -1,0 +1,27 @@
+{
+    "name": "Lab 4",
+    "endpoint": "cal/cs61a/su18/lab04",
+    "src": [
+        "lab04.py",
+        "lab04_extra.py",
+        "tests/mutability.py"
+    ],
+    "tests": {
+        "tests/mutability.py": "ok_test",
+        "lab04.py": "doctest",
+        "lab04_extra.py": "doctest"
+    },
+    "default_tests": [
+        "mutability",
+        "distance",
+        "closer_city"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}
