@@ -86,3 +86,18 @@ Running tests
 Test summary
     3 test cases passed! No cases failed.
 ```
+
+## Project 2 Maps
+```
+=====================================================================
+Assignment: Project 2: Yelp Maps
+OK, version v1.13.11
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    70 test cases passed! No cases failed.
+```
