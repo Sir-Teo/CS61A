@@ -101,3 +101,17 @@ Running tests
 Test summary
     70 test cases passed! No cases failed.
 ```
+## hw03 a.k.a the hardest homework I've ever done
+```
+=====================================================================
+Assignment: Homework 3
+OK, version v1.13.11
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    6 test cases passed! No cases failed.
+```
