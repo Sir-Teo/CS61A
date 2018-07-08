@@ -1,8 +1,11 @@
 # CS61A
 Summer 2018, CS61A, Structure and Interpretation of Computer Programs! This will remain a private repository until the summer ends. Although CS61A uses the same project every year, they might change some functions each term to prevent cheating.
 
+In this README file, I uploaded some results of ok tests.
+
 
 # OK Submissions
+
 ## Lab 01
 ```
 Last login: Wed Jun 20 22:55:24 on ttys000
@@ -85,4 +88,33 @@ Running tests
 ---------------------------------------------------------------------
 Test summary
     3 test cases passed! No cases failed.
+```
+
+## Project 2 Maps
+```
+=====================================================================
+Assignment: Project 2: Yelp Maps
+OK, version v1.13.11
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    70 test cases passed! No cases failed.
+```
+## hw03 a.k.a the hardest homework I've ever done
+```
+=====================================================================
+Assignment: Homework 3
+OK, version v1.13.11
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+---------------------------------------------------------------------
+Test summary
+    6 test cases passed! No cases failed.
 ```
