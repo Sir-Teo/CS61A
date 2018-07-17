@@ -1,0 +1,29 @@
+{
+    "name": "Lab 7",
+    "endpoint": "cal/cs61a/su18/lab07",
+    "src": [
+        "lab07.scm",
+        "lab07_extra.scm"
+    ],
+    "tests": {
+        "tests/combinations.py": "ok_test",
+        "tests/composed.py": "ok_test",
+        "tests/gcd.py": "ok_test",
+        "tests/intersect.py": "ok_test",
+        "tests/make_adder.py": "ok_test",
+        "tests/over_or_under.py": "ok_test"
+    },
+    "default_tests": [
+        "combinations",
+        "over_or_under",
+        "make_adder"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

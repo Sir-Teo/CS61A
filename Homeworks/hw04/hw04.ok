@@ -1,0 +1,28 @@
+{
+    "name": "Homework 4",
+    "endpoint": "cal/cs61a/su18/hw04",
+    "src": [
+        "hw04.py",
+        "hw04.scm"
+    ],
+    "tests": {
+        "hw04.py": "doctest",
+        "tests/sign.py": "ok_test",
+        "tests/pow.py": "ok_test",
+        "tests/cadr-caddr.py": "ok_test",
+        "tests/ordered.py": "ok_test",
+        "tests/nodots.py": "ok_test",
+        "tests/contains.py": "ok_test",
+        "tests/add.py": "ok_test",
+        "tests/intersect.py": "ok_test",
+        "tests/union.py": "ok_test",
+        "tests/survey.py": "ok_test"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}
