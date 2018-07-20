@@ -1,0 +1,29 @@
+{
+    "name": "Lab 09",
+    "endpoint": "cal/cs61a/su18/lab09",
+    "src": [
+        "lab09.py",
+        "lab09_extra.py"
+    ],
+    "tests": {
+        "tests/trees.py": "ok_test",
+        "lab09.py:cumulative_sum": "doctest",
+        "lab09.py:leaves": "doctest",
+        "lab09.py:insert": "doctest",
+        "lab09_extra.py": "doctest"
+    },
+    "default_tests": [
+        "trees",
+        "cumulative_sum",
+        "leaves",
+        "insert"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}
