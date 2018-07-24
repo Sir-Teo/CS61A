@@ -1,0 +1,35 @@
+{
+    "name": "Lab 10",
+    "endpoint": "cal/cs61a/su18/lab10",
+    "src": [
+        "tests/generators.py",
+        "tests/iterators.py",
+        "lab10.py",
+        "lab10_extra.py"
+    ],
+    "tests": {
+        "tests/generators.py": "ok_test",
+        "tests/iterators.py": "ok_test",
+        "lab10.py:scale": "doctest",
+        "lab10.py:trap": "doctest",
+        "lab10_extra.py:hailstone": "doctest",
+        "lab10_extra.py:repeated": "doctest",
+        "lab10_extra.py:merge": "doctest",
+        "lab10_extra.py:remainders_generator": "doctest",
+        "lab10_extra.py:zip_generator": "doctest"
+    },
+    "default_tests": [
+        "generators",
+        "iterators",
+        "scale",
+        "trap"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

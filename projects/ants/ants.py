@@ -138,6 +138,7 @@ class Bee(Insect):
     name = 'Bee'
     damage = 1
     is_watersafe = True
+    scared_times = 0
     scared = False
     # OVERRIDE CLASS ATTRIBUTES HERE
 
@@ -167,14 +168,21 @@ class Bee(Insect):
         colony -- The AntColony, used to access game state information.
         """
         destination = self.place.exit
+        backwards = self.place.entrance
         # Extra credit: Special handling for bee direction
         # BEGIN EC
         "*** YOUR CODE HERE ***"
+        if self.scared_times > 0 and backwards is not None:
+            self.move_to(backwards)
+            self.scared_times -= 1
+        elif self.scared_times > 0:
+            self.scared_times -= 1
         # END EC
-        if self.blocked():
-            self.sting(self.place.ant)
-        elif self.armor > 0 and destination is not None:
-            self.move_to(destination)
+        elif self.scared_times == 0:
+            if self.blocked():
+                self.sting(self.place.ant)
+            elif self.armor > 0 and destination is not None:
+                self.move_to(destination)
 
 
 class Ant(Insect):
@@ -376,10 +384,10 @@ class NinjaAnt(Ant):
     def action(self, colony):
         # BEGIN Problem 7
         "*** YOUR CODE HERE ***"
-        if self.place.bees is not None and len(self.place.bees) != 0:
-            bees = self.place.bees[:]
-            for bee in bees:
-                bee.reduce_armor(self.damage)
+        #if self.place.bees is not None and len(self.place.bees) != 0:
+        bees = self.place.bees[:]
+        for bee in bees:
+            bee.reduce_armor(self.damage)
         # END Problem 7
 
 # BEGIN Problem 8
@@ -504,7 +512,7 @@ class QueenAnt(ScubaThrower):  # You should change this line
         """
         # BEGIN Problem 13
         "*** YOUR CODE HERE ***"
-        if not self.is_true_queen:          #it dies
+        if not self.is_true_queen:          #haha, it dies
             self.reduce_armor(self.armor)
         elif self.is_true_queen:
             super().action(colony)
@@ -571,8 +579,7 @@ def make_scare(action, bee):
     # BEGIN Problem EC
     "*** YOUR CODE HERE ***"
     def new_action(colony):
-        if not bee.scared:
-            return
+        return action(colony)
     return new_action
     # END Problem EC
 
@@ -580,14 +587,14 @@ def apply_effect(effect, bee, duration):
     """Apply a status effect to a BEE that lasts for DURATION turns."""
     # BEGIN Problem EC
     "*** YOUR CODE HERE ***"
-    start_time,origin_action = 0, bee.action
-    def effect_action(colony):
-        nonlocal start_time
-        start_time +=1
-        if start_time <= duration:
-            return effect(origin_action,bee)(colony)
-        return origin_action(colony)
-    bee.action = effect_action
+    count,action = 0, bee.action
+    def new_action(colony):
+        nonlocal count
+        count +=1
+        if count <= duration:
+            return effect(action, bee)(colony)
+        return action(colony)
+    bee.action = new_action
     # END Problem EC
 
 
@@ -619,7 +626,9 @@ class ScaryThrower(ThrowerAnt):
     def throw_at(self, target):
         # BEGIN Problem EC
         "*** YOUR CODE HERE ***"
-        if target:
+        if not target.scared:
+            target.scared = True
+            target.scared_times += 2
             apply_effect(make_scare, target, 1)
         # END Problem EC
 
