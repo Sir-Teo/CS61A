@@ -20,6 +20,7 @@ def find_closest(location, centroids):
     """
     # BEGIN Question 3
     "*** YOUR CODE HERE ***"
+    '''
     minDistance = 10000000
     minCentroid = [1000000,10000000]
     for c in centroids:
@@ -27,6 +28,8 @@ def find_closest(location, centroids):
             minDistance = distance(location, c)
             minCentroid = c
     return minCentroid
+    '''
+    return min(centroids, key = lambda c: distance(location, c))
     # END Question 3
 
 
@@ -56,17 +59,9 @@ def group_by_centroid(restaurants, centroids):
     """
     # BEGIN Question 4
     "*** YOUR CODE HERE ***"
-    results = []
-    for r in restaurants:
-        pair = []
-        centroid = find_closest(restaurant_location(r),centroids)
-        pair.append(centroid)
-        pair.append(r)
-        results.append(pair)
-    #print(group_by_first(results))
-    return group_by_first(results)
-
-
+    closest = lambda r: find_closest(restaurant_location(r), centroids)
+    closest_centroids = [[closest(r), r] for r in restaurants]
+    return group_by_first(closest_centroids)
 
     # END Question 4
 
@@ -184,11 +179,11 @@ def rate_all(user, restaurants, feature_fns):
     "*** YOUR CODE HERE ***"
     results = {}
     for r in restaurants:
+        name = restaurant_name(r)
         if r in reviewed:
-            results[restaurant_name(r)] = user_rating(user, restaurant_name(r))
+            results[name] = user_rating(user, name)
         else:
-            results[restaurant_name(r)] = predictor(r)
-        #print(restaurant_ratings(r))
+            results[name] = predictor(r)
     return results
     # END Question 9
 

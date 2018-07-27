@@ -1,0 +1,30 @@
+{
+    "name": "Homework 5",
+    "endpoint": "cal/cs61a/su18/hw05",
+    "src": [
+        "hw05.py",
+        "hw05.scm"
+    ],
+    "tests": {
+        "hw05.py": "doctest",
+        "tests/make_fib.py": "ok_test"
+    },
+    "default_tests": [
+        "VendingMachine",
+        "MissManners",
+        "long_paths",
+        "add_d_leaves",
+        "make_counter",
+        "make_withdraw",
+        "make_joint",
+        "make_fib"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}
