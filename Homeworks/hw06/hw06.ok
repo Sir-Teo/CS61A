@@ -1,0 +1,33 @@
+{
+    "name": "Homework 6",
+    "endpoint": "cal/cs61a/su18/hw06",
+    "src": [
+        "hw06.scm",
+        "hw06.py"
+    ],
+    "tests": {
+        "hw06.py:permutations": "doctest",
+        "tests/find.py": "ok_test",
+        "tests/scale-stream.py": "ok_test",
+        "tests/has-cycle.py": "ok_test",
+        "tests/has-cycle-constant.py": "ok_test",
+        "tests/accumulate.py": "ok_test",
+        "tests/list-comp.py": "ok_test"
+    },
+    "default_tests": [
+        "find",
+        "scale-stream",
+        "has-cycle",
+        "permutations",
+        "accumulate",
+        "list-comp"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}
