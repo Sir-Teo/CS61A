@@ -43,9 +43,9 @@ class Place(object):
             else:
                 # BEGIN Problem 9
                 if self.ant.can_contain(insect):
-                    self.ant.contained_ant = insect
+                    self.ant.contain_ant(insect)
                 elif insect.can_contain(self.ant):
-                    insect.contained_ant = self.ant
+                    insect.contain_ant(self.ant)
                     self.ant = insect
                 else:
                     assert self.ant is None , 'Two ants in {0}'.format(self)
@@ -202,10 +202,8 @@ class Ant(Insect):
     def can_contain(self, other):
         # BEGIN Problem 9
         "*** YOUR CODE HERE ***"
-        if self.is_container and self.contained_ant == None:
-            if other.is_container == False:
-                return True
-        return False
+        return  (self.is_container and self.contained_ant == None) and not other.is_container
+
         # END Problem 9
 
 
@@ -250,7 +248,7 @@ class ThrowerAnt(Ant):
         count = 0
         while bee_place is not None:
             if count >= self.min_range and count <= self.max_range:
-                if len(bee_place.bees) > 0 and type(bee_place) is not Hive:
+                if bee_place.bees and type(bee_place) is not Hive:
                     return random_or_none(bee_place.bees)
             count += 1
             bee_place = bee_place.entrance
@@ -324,9 +322,7 @@ class FireAnt(Ant):
                 bees = self.place.bees[:]
                 for bee in bees:
                     bee.reduce_armor(self.damage)
-        self.armor -= amount
-        if self.armor <= 0:
-            self.place.remove_insect(self)
+        Ant.reduce_armor(self, amount)
 
         # END Problem 5
 
